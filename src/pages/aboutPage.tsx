@@ -1,6 +1,22 @@
 import React from "react";
 import Head from "next/head";
-
+import Image from "next/image";
+import styles from "../styles/About.module.scss";
+import Title from "../components/Title/Title";
+import Subtitle from "../components/Subtitle/Subtitle";
+import Button from "../components/Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import {
+  faJs,
+  faHtml5,
+  faCss3,
+  faNodeJs,
+  faSass,
+  faReact,
+} from "@fortawesome/free-brands-svg-icons";
+// import { } from "@fortawesome/";
+import Card from "../components/Card/Card";
 const aboutPage = () => {
   return (
     <>
@@ -10,7 +26,72 @@ const aboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>About page</h2>
+
+      <div className={styles.aboutContainer}>
+        <div className={styles.title}>
+          <Title text="About Me"></Title>
+        </div>
+
+        <div className={styles.overview}>
+          <div className={styles.info}>
+            <Subtitle text="Information" />
+            <p>
+              Proficient in JavaScript programming, React JS, Node JS, and SQL.
+              I aspire to be a web developer who can support a great company and
+              give positive values to other.
+            </p>
+            <Button text="Download CV">
+              <FontAwesomeIcon icon={faDownload} />
+            </Button>
+          </div>
+          <div className={styles.staticCard}>
+            <Card number={2} title="Project Completed" />
+            <Card number={2} title="Project Completed" />
+            <Card number={2} title="Project Completed" />
+            <Card number={2} title="Project Completed" />
+          </div>
+        </div>
+
+        {/* html, css, sass, js, ts, react, nextjs, nodejs  */}
+        <div className={styles.learned}>
+          <Subtitle text="What I Have Learned" />
+
+          <div className={styles.learnedItems}>
+            <div className={styles.learnedItem}>
+              <img src="/icons/html-5.svg" alt="html-icon" />
+              <p className={styles.itemName}>Html 5</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/css3.svg" alt="css-icon" />
+              <p className={styles.itemName}>Css 3</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/sass.svg" alt="sass-icon" />
+              <p className={styles.itemName}>Sass</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/javascript.svg" alt="js-icon" />
+              <p className={styles.itemName}>Javascript</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/typescript.svg" alt="ts-icon" />
+              <p className={styles.itemName}>Typescript</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/react.svg" alt="react-icon" />
+              <p className={styles.itemName}>React</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/nextjs-round.svg" alt="nextJs-icon" />
+              <p className={styles.itemName}>Next</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/node-js.svg" alt="nodeJs-icon" />
+              <p className={styles.itemName}>Node JS</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

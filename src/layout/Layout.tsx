@@ -1,5 +1,6 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import styles from "./Layout.module.scss";
 //type interface
 import { ReactNode } from "react";
 
@@ -11,7 +12,7 @@ const Layout = ({ children }: ChildrenI) => {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </>
   );

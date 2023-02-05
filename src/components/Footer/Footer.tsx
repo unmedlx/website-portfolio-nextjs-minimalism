@@ -1,11 +1,13 @@
 import React from "react";
-import "./Footer.module.scss";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <>
-      <div> Ini Footer</div>
-    </>
+    <div className={styles.footerContainer}>
+      <div className={styles.copyright}>
+        Copyright @ 2022 Luthfi Ayyash Portfolio. All Right Reserved{" "}
+      </div>
+    </div>
   );
 };
 

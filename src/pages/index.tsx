@@ -1,8 +1,8 @@
-import { Inter } from "@next/font/google";
-
 import Head from "next/head";
-
-const inter = Inter({ subsets: ["latin"] });
+import styles from "../styles/Home.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import Button from "../components/Button/Button";
 
 export default function Home() {
   return (
@@ -13,7 +13,34 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>home page</h1>
+      <header className={styles.headerContainer}>
+        <div className={styles.leftHeader}>
+          <div className={styles.shapedColor}></div>
+          <div className={styles.heroImg}>
+            <img src="./img/hero.png" alt="Hero Image" />
+          </div>
+        </div>
+        <div className={styles.rightHeader}>
+          <h1 className={styles.name}>
+            Hi i'm <span>Ayyas</span> a Web Developer
+          </h1>
+          <div className={styles.paragraph}>
+            <p>
+              A fresh graduated that passionate about website development.
+              Highly analytical, fast learner, sociable, and an excellent
+              problem solver with organizational experiences.
+            </p>
+            <p>
+              Proficient in JavaScript programming, React JS, Node JS, and SQL.
+              I aspire to be a web developer who can support a great company and
+              give positive values to other.
+            </p>
+          </div>
+          <Button text="Download CV">
+            <FontAwesomeIcon icon={faDownload} />
+          </Button>
+        </div>
+      </header>
     </>
   );
 }

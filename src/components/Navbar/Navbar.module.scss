@@ -1,3 +1,5 @@
+@import "../../styles/breakpoints";
+
 .navbarContainer {
   background-color: pink;
   display: flex;
@@ -26,6 +28,7 @@
     &:hover {
       background-color: var(--color-grey-3);
     }
+    transition: all 0.4s ease-in-out;
     background-color: var(--color-grey-4);
     cursor: pointer;
     padding: 1rem;
@@ -46,29 +49,32 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: var(--color-grey-5);
+  background-color: var(--color-grey-4);
   cursor: pointer;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &:active {
     transform: translateY(-4px);
   }
+  &:hover {
+    background-color: var(--color-grey-3);
+  }
   .icon {
     font-size: 1.4rem;
-    color: var(--color-grey-2);
+    color: var(--color-grey-1);
     pointer-events: none;
   }
 }
 
-@media screen and (max-width: 600px) {
+@include phone {
   .icons {
     z-index: 1;
     position: absolute;
-    top: 2%;
+    top: 0.5%;
     // bottom: auto;
     flex-direction: row;
     justify-content: center;
@@ -80,11 +86,38 @@
       margin: 1rem 0.3rem;
     }
   }
-
   .themeBtn {
     z-index: 3;
-    width: 50px;
-    height: 50px;
-    top: 90%;
+    width: 40px;
+    height: 40px;
+    top: unset;
+    bottom: 2%;
+    .icon {
+      font-size: 1rem;
+    }
   }
 }
+// @media screen and (max-width: 600px) {
+//   .icons {
+//     z-index: 1;
+//     position: absolute;
+//     top: 2%;
+//     // bottom: auto;
+//     flex-direction: row;
+//     justify-content: center;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     width: 100%;
+//     // background-color: var(--color-grey-5);
+//     a {
+//       margin: 1rem 0.3rem;
+//     }
+//   }
+
+//   .themeBtn {
+//     z-index: 3;
+//     width: 50px;
+//     height: 50px;
+//     top: 90%;
+//   }
+// }

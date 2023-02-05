@@ -1,0 +1,18 @@
+.h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  // text-align: center;
+}
+
+@import "../../styles/breakpoints";
+
+@include tablet {
+  .h4 {
+    font-size: 2rem;
+  }
+}
+@include phone {
+  .h4 {
+    font-size: 1.5rem;
+  }
+}

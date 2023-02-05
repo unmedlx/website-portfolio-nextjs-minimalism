@@ -1,0 +1,32 @@
+.titleContainer {
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  padding-bottom: 3rem;
+  h2 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 4px 6px rgba(0, 0, 0, 0.3);
+    span {
+      color: var(--color-secondary);
+    }
+  }
+}
+
+@import "../../styles/breakpoints";
+
+@include tablet {
+  .titleContainer {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
+@include phone {
+  .titleContainer {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}

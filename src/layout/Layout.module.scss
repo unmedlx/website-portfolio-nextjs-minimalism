@@ -1,0 +1,11 @@
+@import "../styles/breakpoints";
+
+.main {
+  min-height: 100vh;
+}
+
+@include phone {
+  .main {
+    margin: 20% 0 15% 0;
+  }
+}
