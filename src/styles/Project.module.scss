@@ -1,0 +1,15 @@
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@import "./breakpoints";
+
+@include laptop {
+  .projectsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+@include phone {
+}

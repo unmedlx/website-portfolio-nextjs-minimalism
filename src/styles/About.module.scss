@@ -1,107 +1,107 @@
-.aboutContainer {
-  padding: 4rem 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+// .aboutContainer {
+//   padding: 4rem 20%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
 
-  .overview {
+.overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .info {
+    padding-right: 5rem;
+  }
+  .staticCard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    .info {
-      padding-right: 5rem;
-    }
-    .staticCard {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
+    gap: 2rem;
   }
+}
 
-  .learned {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 4rem;
-    .learnedItems {
-      min-width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-      .learnedItem {
-        transition: all 0.4s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        &:hover {
-          cursor: default;
-          transform: translateY(-5px);
-          .itemName {
-            opacity: 1;
-          }
-        }
-        img {
-          width: 7rem;
-        }
+.learned {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  .learnedItems {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    .learnedItem {
+      transition: all 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        cursor: default;
+        transform: translateY(-5px);
         .itemName {
-          transition: all 0.4s ease-in-out;
-          font-weight: 600;
-          font-size: 1rem;
-          opacity: 0;
+          opacity: 1;
         }
+      }
+      img {
+        width: 7rem;
+      }
+      .itemName {
+        transition: all 0.4s ease-in-out;
+        font-weight: 600;
+        font-size: 1rem;
+        opacity: 0;
       }
     }
   }
 }
+// }
 
 @import "./breakpoints";
 
 @include laptop {
-  .aboutContainer {
-    padding: 2rem 15%;
+  // .aboutContainer {
+  // padding: 2rem 15%;
 
-    .overview {
-      grid-template-columns: 1fr;
-      .info {
-        padding-right: 0;
-      }
-      .staticCard {
-        margin: 1.5rem 0;
-
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
+  .overview {
+    grid-template-columns: 1fr;
+    .info {
+      padding-right: 0;
     }
+    .staticCard {
+      margin: 1.5rem 0;
 
-    .learned {
-      .learnedItems {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
+
+  .learned {
+    .learnedItems {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  // }
 }
 
 @include tablet {
 }
 
 @include phone {
-  .aboutContainer {
-    padding: 2rem 10%;
+  // .aboutContainer {
+  // padding: 2rem 10%;
 
-    .learned {
-      .learnedItems {
-        .learnedItem {
-          img {
-            width: 6rem;
-          }
-          .itemName {
-            opacity: 1;
-          }
+  .learned {
+    .learnedItems {
+      .learnedItem {
+        img {
+          width: 6rem;
+        }
+        .itemName {
+          opacity: 1;
         }
       }
     }
   }
+  // }
 }

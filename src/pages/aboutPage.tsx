@@ -1,21 +1,12 @@
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/About.module.scss";
 import Title from "../components/Title/Title";
 import Subtitle from "../components/Subtitle/Subtitle";
 import Button from "../components/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import {
-  faJs,
-  faHtml5,
-  faCss3,
-  faNodeJs,
-  faSass,
-  faReact,
-} from "@fortawesome/free-brands-svg-icons";
-// import { } from "@fortawesome/";
+
 import Card from "../components/Card/Card";
 const aboutPage = () => {
   return (
@@ -27,9 +18,9 @@ const aboutPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.aboutContainer}>
+      <div className="pageContainer">
         <div className={styles.title}>
-          <Title text="About Me"></Title>
+          <Title text1="About" text2="Me"></Title>
         </div>
 
         <div className={styles.overview}>
