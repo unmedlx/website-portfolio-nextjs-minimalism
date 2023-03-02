@@ -1,6 +1,9 @@
 @import "../../styles/breakpoints";
 
 .btnContainer {
+  // button {
+  //   all: unset;
+  // }
   display: flex;
   align-self: flex-start;
   margin: 1rem 0;
@@ -10,6 +13,7 @@
 }
 
 .runningBtn {
+  cursor: pointer;
   border-radius: 30px;
   color: inherit;
   font-weight: 600;

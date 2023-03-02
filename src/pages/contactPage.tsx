@@ -1,7 +1,68 @@
-import React from "react";
 import Head from "next/head";
+import Subtitle from "../components/Subtitle/Subtitle";
+import Title from "../components/Title/Title";
+import styles from "../styles/Contact.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWhatsapp,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import ButtonSubmit from "../components/Button/ButtonSubmit";
+import { FormEvent, HTMLInputTypeAttribute, useState } from "react";
+import { sendContactForm } from "../action/api";
+
+// 1. functional email form
+// 2. switch page animation
+// 3. responsiveness
+// 4. isi real data
 
 const contactPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    console.log(loading);
+
+    e.preventDefault();
+    setLoading(true);
+
+    let formData: any = {};
+
+    formData = {
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    console.log(formData);
+
+    try {
+      await sendContactForm(formData).then((res) => {
+        if (res.success === true) {
+          setLoading(false);
+          setSent(true);
+          setTimeout(() => setSent(false), 3000);
+          setName("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+        }
+      });
+    } catch (Error: any) {
+      console.log(Error);
+      setError(Error.message);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -10,7 +71,105 @@ const contactPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>Contact Page</h2>
+      <div className="pageContainer">
+        <Title text1="Contact" text2="ME" />
+
+        <div className={styles.contactContainer}>
+          <div className={styles.left}>
+            <div className={styles.contactText}>
+              <Subtitle text="Reach Me Out" />
+              <p>There is an old saying " Tak Kenal Maka Tak Sayang "</p>
+              <p>
+                So if you interested to know more about me, you can reach me out
+                at my socials, i put the links down below
+              </p>
+              <p>
+                Thank you so much for your time <br />
+                Have A Great Day !
+              </p>
+            </div>
+            <div className={styles.socials}>
+              <a href="#" className={styles.socialItem}>
+                <FontAwesomeIcon icon={faWhatsapp} />
+                <span>+62813178855</span>
+              </a>
+              <a href="#" className={styles.socialItem}>
+                <FontAwesomeIcon icon={faLinkedin} />
+                <span>Luthfi Ayyash</span>
+              </a>
+              <a href="#" className={styles.socialItem}>
+                <FontAwesomeIcon icon={faGithub} />
+                <span>unmedlx</span>
+              </a>
+              <a href="#" className={styles.socialItem}>
+                <FontAwesomeIcon icon={faEnvelope} />
+                <span>luthfiayyas@gmail.com</span>
+              </a>
+              <a href="#" className={styles.socialItem}>
+                <FontAwesomeIcon icon={faLocationDot} />
+                <span>Bandung, West Java, Indonesia</span>
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.right}>
+            <div className={styles.emailMe}>
+              {error && <h3 className={styles.error}>{error}</h3>}
+              {sent && <h3 className={styles.sent}>Message Sent ✅</h3>}
+              <form method="post" onSubmit={handleOnSubmit}>
+                <p>
+                  <label htmlFor="name">Name</label>
+                  <input
+                    required
+                    placeholder="Your Name"
+                    type="text"
+                    name="name"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                  />
+                </p>
+                <p>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    required
+                    placeholder="example@mail.com"
+                    type="email"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                  />
+                </p>
+                <p>
+                  <label htmlFor="subject">Subject</label>
+                  <input
+                    required
+                    placeholder="Subject.."
+                    type="text"
+                    name="subject"
+                    onChange={(e) => setSubject(e.target.value)}
+                    value={subject}
+                  />
+                </p>
+                <p>
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    required
+                    placeholder="Message.."
+                    name="message"
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                  />
+                </p>
+                <div className={styles.button}>
+                  <ButtonSubmit text="">
+                    {loading ? "Loading.." : "Submit"}
+                  </ButtonSubmit>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

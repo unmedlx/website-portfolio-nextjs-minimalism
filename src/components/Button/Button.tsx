@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./Button.module.scss";
 
-interface ButtonI {
+export interface ButtonI {
   text: string;
-  children: any;
+  children?: any;
 }
 
 const Button = ({ text, children }: ButtonI) => {
   return (
     <div className={styles.btnContainer}>
-      <a href="" className={styles.runningBtn}>
+      <a href="#" className={styles.runningBtn}>
         <span className={styles.btnText}>{text}</span>
         <span className={styles.btnIcon}>{children}</span>
       </a>

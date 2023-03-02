@@ -1,0 +1,90 @@
+@import "./breakpoints";
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  @include laptop {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contactText {
+    // width: 50%;
+  }
+  .socials {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    .socialItem {
+      width: fit-content;
+      transition: all 0.4s ease-in-out;
+      margin: 0.4rem 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      svg {
+        transition: all 0.4s ease-in-out;
+        width: 2rem;
+        border-radius: 1.5rem;
+      }
+      span {
+        transition: all 0.4s ease-in-out;
+        margin-left: 10px;
+      }
+      &:hover {
+        span {
+          border-bottom: 1px solid var(--color-grey-3);
+        }
+        svg {
+          padding: 10px;
+          background-color: var(--color-grey-3);
+        }
+      }
+    }
+  }
+  .emailMe {
+    display: flex;
+    flex-direction: column;
+    h3 {
+      background-color: whitesmoke;
+      padding: 0.5rem;
+      border-radius: 10px;
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .error {
+      color: red;
+      text-align: center;
+    }
+    .sent {
+      color: lightgreen;
+      text-align: center;
+    }
+    input,
+    textarea {
+      border-radius: 0 20px 20px 20px;
+      font-weight: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      padding: 0.8rem 1.1rem;
+      outline: none;
+      border: none;
+      background-color: var(--color-grey-5);
+      width: 100%;
+      color: var(--color-white);
+      resize: none;
+    }
+
+    button {
+      all: unset;
+    }
+    .button {
+      text-align: center;
+      margin: 1rem 0;
+    }
+  }
+}
