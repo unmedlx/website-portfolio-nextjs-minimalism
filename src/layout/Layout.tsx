@@ -4,7 +4,7 @@ import styles from "./Layout.module.scss";
 //type interface
 import { ReactNode } from "react";
 
-interface ChildrenI {
+export interface ChildrenI {
   children: ReactNode;
 }
 

@@ -12,6 +12,7 @@ import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import ButtonSubmit from "../components/Button/ButtonSubmit";
 import { FormEvent, HTMLInputTypeAttribute, useState } from "react";
 import { sendContactForm } from "../action/api";
+import { motion, m } from "framer-motion";
 
 // 1. functional email form
 // 2. switch page animation
@@ -46,6 +47,8 @@ const contactPage = () => {
     console.log(formData);
 
     try {
+      // setLoading(false);
+      // setSent(true);
       await sendContactForm(formData).then((res) => {
         if (res.success === true) {
           setLoading(false);
@@ -114,8 +117,6 @@ const contactPage = () => {
 
           <div className={styles.right}>
             <div className={styles.emailMe}>
-              {error && <h3 className={styles.error}>{error}</h3>}
-              {sent && <h3 className={styles.sent}>Message Sent ✅</h3>}
               <form method="post" onSubmit={handleOnSubmit}>
                 <p>
                   <label htmlFor="name">Name</label>
@@ -166,6 +167,10 @@ const contactPage = () => {
                   </ButtonSubmit>
                 </div>
               </form>
+              <div className={styles.popup}>
+                {error && <h3 className={styles.error}>{error}</h3>}
+                {sent && <h3 className={styles.sent}>Message Sent ✅</h3>}
+              </div>
             </div>
           </div>
         </div>

@@ -65,6 +65,7 @@ p {
 @import "./breakpoints";
 
 .pageContainer {
+  z-index: -1;
   padding: 4rem 20%;
   display: flex;
   flex-direction: column;

@@ -9,6 +9,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 //Theme
 import { ThemeProvider } from "next-themes";
+// Page Transition
+import { AnimatePresence, motion } from "framer-motion";
+import PageTransition from "../layout/PageTransition";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider>
       <main className={poppins.className}>
         <Layout>
-          <Component {...pageProps} />
+          <PageTransition>
+            <Component {...pageProps} />
+          </PageTransition>
         </Layout>
       </main>
     </ThemeProvider>

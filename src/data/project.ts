@@ -16,8 +16,8 @@ export const projectArray: ProjectArrayI[] = [
   },
   {
     id: 2,
-    name: "Brange Ecommerce",
-    img: "/img/brange.png",
+    name: "Business Website",
+    img: "/img/bisnis-web.png",
     ghLink: "#",
     pLink: "#",
   },
