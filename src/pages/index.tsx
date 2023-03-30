@@ -22,18 +22,21 @@ export default function Home() {
         </div>
         <div className={styles.rightHeader}>
           <h1 className={styles.name}>
-            Hi i'm <span>Ayyas</span> a Web Developer
+            Hi i'm <span>Ayyas</span> <br /> A Web Developer
           </h1>
           <div className={styles.paragraph}>
             <p>
-              A fresh graduated that passionate about website development.
-              Highly analytical, fast learner, sociable, and an excellent
-              problem solver with organizational experiences.
+              A fresh graduated that passionate about website development. learn
+              from basic until now experienced using React JS, Vite JS, Next JS,
+              Tailwind, Node JS, Mysql and MongoDb.
             </p>
             <p>
-              Proficient in JavaScript programming, React JS, Node JS, and SQL.
-              I aspire to be a web developer who can support a great company and
-              give positive values to other.
+              Having couple of projects, from simple to complex, from doing
+              alone to collaborate, and from just frontend to fullstack.
+            </p>
+            <p>
+              I aspire to be a web developer who can keep up with new tech
+              innovation.
             </p>
           </div>
           <Button text="Download CV">

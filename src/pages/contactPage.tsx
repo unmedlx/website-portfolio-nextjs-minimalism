@@ -30,10 +30,11 @@ const contactPage = () => {
   const [sent, setSent] = useState(false);
 
   const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    console.log(loading);
+    // console.log(loading);
 
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     let formData: any = {};
 
@@ -63,6 +64,7 @@ const contactPage = () => {
     } catch (Error: any) {
       console.log(Error);
       setError(Error.message);
+      setLoading(false);
     }
   };
 
@@ -84,31 +86,54 @@ const contactPage = () => {
               <p>There is an old saying " Tak Kenal Maka Tak Sayang "</p>
               <p>
                 So if you interested to know more about me, you can reach me out
-                at my socials, i put the links down below
+                with send me an email from this email form (cause its a
+                functional form btw). Or to know a bit more about me you can
+                check out my socials, i put the links down below.
               </p>
               <p>
-                Thank you so much for your time <br />
-                Have A Great Day !
+                thats all for this portfolio website, thank you so much for your
+                time
               </p>
+              <p>have a great day !</p>
             </div>
             <div className={styles.socials}>
-              <a href="#" className={styles.socialItem}>
+              <a
+                href="https://wa.me/6281312788552"
+                target={"_blank"}
+                className={styles.socialItem}
+              >
                 <FontAwesomeIcon icon={faWhatsapp} />
                 <span>+62813178855</span>
               </a>
-              <a href="#" className={styles.socialItem}>
+              <a
+                href="https://www.linkedin.com/in/luthfi-ayyash-45535020b/"
+                target="_blank"
+                className={styles.socialItem}
+              >
                 <FontAwesomeIcon icon={faLinkedin} />
                 <span>Luthfi Ayyash</span>
               </a>
-              <a href="#" className={styles.socialItem}>
+              <a
+                href="https://github.com/unmedlx"
+                target="_blank"
+                className={styles.socialItem}
+              >
                 <FontAwesomeIcon icon={faGithub} />
                 <span>unmedlx</span>
               </a>
-              <a href="#" className={styles.socialItem}>
+              <a
+                href="mailto:luthfiayyas@gmail.com"
+                target="_blank"
+                className={styles.socialItem}
+              >
                 <FontAwesomeIcon icon={faEnvelope} />
                 <span>luthfiayyas@gmail.com</span>
               </a>
-              <a href="#" className={styles.socialItem}>
+              <a
+                href="https://goo.gl/maps/fiS4CbcLZQq46EWo6"
+                target="_blank"
+                className={styles.socialItem}
+              >
                 <FontAwesomeIcon icon={faLocationDot} />
                 <span>Bandung, West Java, Indonesia</span>
               </a>

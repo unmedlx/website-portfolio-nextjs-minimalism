@@ -12,6 +12,8 @@ const ProjectCard = ({ img, name, ghLink, pLink }: ProjectArrayI) => {
         <img src={img} alt={name} />
       </div>
 
+      <h3>{name}</h3>
+
       <div className={styles.hoverItem}>
         <div className={styles.links}>
           <a className={styles.icon} href={ghLink} target="_blank">
@@ -22,8 +24,6 @@ const ProjectCard = ({ img, name, ghLink, pLink }: ProjectArrayI) => {
           </a>
         </div>
       </div>
-
-      <h3>{name}</h3>
     </div>
   );
 };

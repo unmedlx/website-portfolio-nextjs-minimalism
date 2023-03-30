@@ -27,19 +27,30 @@ const aboutPage = () => {
           <div className={styles.info}>
             <Subtitle text="Information" />
             <p>
-              Proficient in JavaScript programming, React JS, Node JS, and SQL.
-              I aspire to be a web developer who can support a great company and
-              give positive values to other.
+              1 year learning story with Javascript and Typescript. Start with
+              taking and completing Purwadhika Full Stack Web Development
+              program.
+            </p>
+            <p>
+              Implement what i've learned to couple of projects with different
+              frameworks such as React JS, Next JS, and Vite JS. each project
+              have different level of complexity.
+            </p>
+            <p>
+              because of the technology is always evolving and moving forward. i
+              think we, and especially me as a web developer, should be adapt
+              and improvise with new tech innovation in the future. and that is
+              what I aspire to be
             </p>
             <Button text="Download CV">
               <FontAwesomeIcon icon={faDownload} />
             </Button>
           </div>
           <div className={styles.staticCard}>
-            <Card number={2} title="Project Completed" />
-            <Card number={2} title="Project Completed" />
-            <Card number={2} title="Project Completed" />
-            <Card number={2} title="Project Completed" />
+            <Card number={1} title="Year Experience" />
+            <Card number={4} title="Project Completed" />
+            <Card number={3} title="Framework" />
+            <Card number={2} title="Language" />
           </div>
         </div>
 
@@ -61,6 +72,10 @@ const aboutPage = () => {
               <p className={styles.itemName}>Sass</p>
             </div>
             <div className={styles.learnedItem}>
+              <img src="/icons/tailwind.svg" alt="tailwind-icon" />
+              <p className={styles.itemName}>Tailwind</p>
+            </div>
+            <div className={styles.learnedItem}>
               <img src="/icons/javascript.svg" alt="js-icon" />
               <p className={styles.itemName}>Javascript</p>
             </div>
@@ -77,8 +92,20 @@ const aboutPage = () => {
               <p className={styles.itemName}>Next</p>
             </div>
             <div className={styles.learnedItem}>
+              <img src="/icons/Vitejs.svg" alt="vitejs-icon" />
+              <p className={styles.itemName}>Vite JS</p>
+            </div>
+            <div className={styles.learnedItem}>
               <img src="/icons/node-js.svg" alt="nodeJs-icon" />
               <p className={styles.itemName}>Node JS</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/mongodb.svg" alt="mongodb-icon" />
+              <p className={styles.itemName}>MongoDb</p>
+            </div>
+            <div className={styles.learnedItem}>
+              <img src="/icons/mysql.svg" alt="mysql-icon" />
+              <p className={styles.itemName}>MySql</p>
             </div>
           </div>
         </div>
