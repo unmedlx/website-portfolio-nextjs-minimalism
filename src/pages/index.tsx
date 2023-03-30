@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button/Button";
+const link = process.env.CV_LINK;
 
 export default function Home() {
   return (
