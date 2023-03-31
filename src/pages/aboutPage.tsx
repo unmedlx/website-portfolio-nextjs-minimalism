@@ -27,19 +27,20 @@ const aboutPage = () => {
           <div className={styles.info}>
             <Subtitle text="Information" />
             <p>
-              1 year learning story with Javascript and Typescript. Start with
-              taking and completing Purwadhika Full Stack Web Development
-              program.
+              This is my one-year journey learning web development. I started my
+              journey by taking and completing the Purwadhika Full Stack Web
+              Development program.
             </p>
             <p>
-              Implement what i've learned to couple of projects with different
-              frameworks such as React JS, Next JS, and Vite JS. each project
-              have different level of complexity.
+              I challenge myself to implement what I've learned and sharpen my
+              skill by creating projects with different frameworks such as React
+              JS, Next JS, and Vite JS. each project has a different level of
+              complexity.
             </p>
             <p>
               because of the technology is always evolving and moving forward. i
               think we, and especially me as a web developer, should be adapt
-              and improvise with new tech innovation in the future. and that is
+              and improve with new tech innovation in the future. and that is
               what I aspire to be
             </p>
             <Button text="Download CV">
