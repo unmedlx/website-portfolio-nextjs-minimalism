@@ -1,8 +1,8 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import Button from "../components/Button/Button";
+import Head from 'next/head';
+import styles from '../styles/Home.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import Button from '../components/Button/Button';
 const link = process.env.CV_LINK;
 
 export default function Home() {
@@ -27,17 +27,12 @@ export default function Home() {
           </h1>
           <div className={styles.paragraph}>
             <p>
-              A fresh graduated that passionate about website development. learn
-              from basic until now experienced using React JS, Vite JS, Next JS,
-              Tailwind, Node JS, Mysql and MongoDb.
+              An IT enthusiast focused on Front-End development with an educational background in
+              Full-Stack. Has 3 years of experience in various projects with satisfactory results.
             </p>
             <p>
-              Having couple of projects, from simple to complex, from doing
-              alone to collaborate, and from just frontend to fullstack.
-            </p>
-            <p>
-              I aspire to be a web developer who can keep up with new tech
-              innovation.
+              Oriented in quality, efficiency, and optimization in coding. Committed to delivering
+              innovative and impactful solutions in every project
             </p>
           </div>
           <Button text="Download CV">

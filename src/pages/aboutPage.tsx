@@ -1,13 +1,14 @@
-import React from "react";
-import Head from "next/head";
-import styles from "../styles/About.module.scss";
-import Title from "../components/Title/Title";
-import Subtitle from "../components/Subtitle/Subtitle";
-import Button from "../components/Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import Head from 'next/head';
+import styles from '../styles/About.module.scss';
+import Title from '../components/Title/Title';
+import Subtitle from '../components/Subtitle/Subtitle';
+import Button from '../components/Button/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
-import Card from "../components/Card/Card";
+import Card from '../components/Card/Card';
+import { LearnItems } from '../data/learnItems';
 const aboutPage = () => {
   return (
     <>
@@ -27,44 +28,43 @@ const aboutPage = () => {
           <div className={styles.info}>
             <Subtitle text="Information" />
             <p>
-              This is my one-year journey learning web development. I started my
-              journey by taking and completing the Purwadhika Full Stack Web
-              Development program.
+              This is my three years journey learning web development. I started my journey by
+              taking and completing the Purwadhika Full Stack Web Development program.
             </p>
             <p>
-              I challenge myself to implement what I've learned and sharpen my
-              skill by creating projects with different frameworks such as React
-              JS, Next JS, and Vite JS. each project has a different level of
-              complexity.
+              I challenge myself to implement what I've learned and sharpen my skill by creating
+              projects with different frameworks.
             </p>
             <p>
-              because of the technology is always evolving and moving forward. i
-              think we, and especially me as a web developer, should be adapt
-              and improve with new tech innovation in the future. and that is
-              what I aspire to be
+              we have to be adaptive with new tech innovation in the future. and that is what I
+              aspire to be
             </p>
             <Button text="Download CV">
               <FontAwesomeIcon icon={faDownload} />
             </Button>
           </div>
           <div className={styles.staticCard}>
-            <Card number={1} title="Year Experience" />
-            <Card number={4} title="Project Completed" />
-            <Card number={3} title="Framework" />
-            <Card number={2} title="Language" />
+            <Card number={3} plus="+" title="Year Experience" />
+            <Card number={5} plus="+" title="Project Completed" />
+            <Card number={5} title="Frameworks" />
+            <Card number={3} title="Language" />
           </div>
         </div>
 
-        {/* html, css, sass, js, ts, react, nextjs, nodejs  */}
+        {/* html, css, sass, js, ts, react, nextjs, nodejs, golang, tailwind, gin, express */}
         <div className={styles.learned}>
           <Subtitle text="What I Have Learned" />
 
           <div className={styles.learnedItems}>
-            <div className={styles.learnedItem}>
-              <img src="/icons/html-5.svg" alt="html-icon" />
-              <p className={styles.itemName}>Html 5</p>
-            </div>
-            <div className={styles.learnedItem}>
+            {LearnItems.map((val, index) => {
+              return (
+                <div className={styles.learnedItem} key={index}>
+                  <img src={val.icon} alt={val.name} />
+                  <p className={styles.itemName}>{val.name}</p>
+                </div>
+              );
+            })}
+            {/* <div className={styles.learnedItem}>
               <img src="/icons/css3.svg" alt="css-icon" />
               <p className={styles.itemName}>Css 3</p>
             </div>
@@ -107,7 +107,7 @@ const aboutPage = () => {
             <div className={styles.learnedItem}>
               <img src="/icons/mysql.svg" alt="mysql-icon" />
               <p className={styles.itemName}>MySql</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

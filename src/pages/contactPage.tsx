@@ -1,18 +1,14 @@
-import Head from "next/head";
-import Subtitle from "../components/Subtitle/Subtitle";
-import Title from "../components/Title/Title";
-import styles from "../styles/Contact.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faWhatsapp,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import ButtonSubmit from "../components/Button/ButtonSubmit";
-import { FormEvent, HTMLInputTypeAttribute, useState } from "react";
-import { sendContactForm } from "../action/api";
-import { motion, m } from "framer-motion";
+import Head from 'next/head';
+import Subtitle from '../components/Subtitle/Subtitle';
+import Title from '../components/Title/Title';
+import styles from '../styles/Contact.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import ButtonSubmit from '../components/Button/ButtonSubmit';
+import { FormEvent, HTMLInputTypeAttribute, useState } from 'react';
+import { sendContactForm } from '../action/api';
+import { motion, m } from 'framer-motion';
 
 // 1. functional email form
 // 2. switch page animation
@@ -20,12 +16,12 @@ import { motion, m } from "framer-motion";
 // 4. isi real data
 
 const contactPage = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -34,7 +30,7 @@ const contactPage = () => {
 
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setError('');
 
     let formData: any = {};
 
@@ -55,10 +51,10 @@ const contactPage = () => {
           setLoading(false);
           setSent(true);
           setTimeout(() => setSent(false), 3000);
-          setName("");
-          setEmail("");
-          setSubject("");
-          setMessage("");
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
         }
       });
     } catch (Error: any) {
@@ -83,25 +79,19 @@ const contactPage = () => {
           <div className={styles.left}>
             <div className={styles.contactText}>
               <Subtitle text="Reach Me Out" />
-              <p>There is an old saying " Tak Kenal Maka Tak Sayang "</p>
               <p>
-                So if you interested to know more about me, you can reach me out
-                with send me an email from this email form (cause its a
-                functional form btw). Or to know a bit more about me you can
-                check out my socials, i put the links down below.
+                if you interested to know more about me, feel free to reach me out with send me an
+                email from this email form.
               </p>
               <p>
-                thats all for this portfolio website, thank you so much for your
-                time
+                {' '}
+                Or to know a bit more about me you can check out my socials, i put the links down
+                below.
               </p>
               <p>have a great day !</p>
             </div>
             <div className={styles.socials}>
-              <a
-                href="https://wa.me/6281312788552"
-                target={"_blank"}
-                className={styles.socialItem}
-              >
+              <a href="https://wa.me/6281312788552" target={'_blank'} className={styles.socialItem}>
                 <FontAwesomeIcon icon={faWhatsapp} />
                 <span>+62813178855</span>
               </a>
@@ -113,19 +103,11 @@ const contactPage = () => {
                 <FontAwesomeIcon icon={faLinkedin} />
                 <span>Luthfi Ayyash</span>
               </a>
-              <a
-                href="https://github.com/unmedlx"
-                target="_blank"
-                className={styles.socialItem}
-              >
+              <a href="https://github.com/unmedlx" target="_blank" className={styles.socialItem}>
                 <FontAwesomeIcon icon={faGithub} />
                 <span>unmedlx</span>
               </a>
-              <a
-                href="mailto:luthfiayyas@gmail.com"
-                target="_blank"
-                className={styles.socialItem}
-              >
+              <a href="mailto:luthfiayyas@gmail.com" target="_blank" className={styles.socialItem}>
                 <FontAwesomeIcon icon={faEnvelope} />
                 <span>luthfiayyas@gmail.com</span>
               </a>
@@ -187,9 +169,7 @@ const contactPage = () => {
                   />
                 </p>
                 <div className={styles.button}>
-                  <ButtonSubmit text="">
-                    {loading ? "Loading.." : "Submit"}
-                  </ButtonSubmit>
+                  <ButtonSubmit text="">{loading ? 'Loading..' : 'Submit'}</ButtonSubmit>
                 </div>
               </form>
               <div className={styles.popup}>

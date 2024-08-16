@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Button.module.scss";
+import React from 'react';
+import styles from './Button.module.scss';
 
 export interface ButtonI {
   text: string;
@@ -7,8 +7,7 @@ export interface ButtonI {
 }
 
 const Button = ({ text, children }: ButtonI) => {
-  const link =
-    "https://drive.google.com/file/d/1CUz4Gw660YL3EY7DYeUahRXcE-otc9lC/view?usp=share_link";
+  const link = process.env.CV_LINK;
   return (
     <div className={styles.btnContainer}>
       <a href={link} target="_blank" className={styles.runningBtn}>
