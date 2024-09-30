@@ -91,10 +91,10 @@ const contactPage = () => {
               <p>have a great day !</p>
             </div>
             <div className={styles.socials}>
-              <a href="https://wa.me/6281312788552" target={'_blank'} className={styles.socialItem}>
+              {/* <a href="https://wa.me/6281312788552" target={'_blank'} className={styles.socialItem}>
                 <FontAwesomeIcon icon={faWhatsapp} />
                 <span>+62813178855</span>
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/in/luthfi-ayyash-45535020b/"
                 target="_blank"

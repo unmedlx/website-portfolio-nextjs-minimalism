@@ -1,23 +1,4 @@
-@import "./breakpoints";
-
-// .sent,
-// .error {
-//   background-color: whitesmoke;
-//   padding: 0.5rem;
-//   border-radius: 10px;
-//   position: absolute;
-//   bottom: 0%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-// .error {
-//   color: red;
-//   text-align: center;
-// }
-// .sent {
-//   color: lightgreen;
-//   text-align: center;
-// }
+@import './breakpoints';
 
 .contactContainer {
   display: grid;
@@ -28,9 +9,6 @@
     gap: 1rem;
   }
 
-  .contactText {
-    // width: 50%;
-  }
   .socials {
     margin: 1.5rem 0;
     display: flex;
